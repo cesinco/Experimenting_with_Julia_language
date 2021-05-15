@@ -88,21 +88,58 @@ https://docs.julialang.org/en/v1/manual/noteworthy-differences/#Noteworthy-diffe
 
 Things I learned creating my first Julia program (porting from Python)
 
+## Variables
+
+1. Julia permits the use of Greek symbols as variable names. Entering the variable name typically consists of typing the LaTeX-equivalent code and hitting the Tab key immediately after, for example ```\alpha```[Tab]``` = 1.0``` which would result in the following display in the REPL:
+
+```
+α = 1
+1
+```
+
+## Ternary operator
+
+1. It is customary in Python to use syntax similar to:
+
+```
+y = 1 if x == True else 0
+```
+to assign a value conditionally. In Julia, there exists the proper ternary operator to achieve the same:
+
+```
+y = x == true ? 1 : 0
+
+# Or more concisely:
+
+y = x ? 1 : 0
+```
+
 ## Strings
 
 1. In Python, there is no distinction between characters and strings, and as  result strings (or characters) can be delimited by a single quote ```'``` or a double quote ```"```  
 Julia requires that strings be delimited by double quote, and reserves single quotes for characters (a different data type from Julia's point of view).
 
-2. 
+2. In Julia, strings are concatenated using the * operator, and not the + operator as in Python
 
 ## Arrays
 
-1. Whereas in Python, there are numnerous numpy functions that vectorize math operations across arrays, but require the import of the library "numpy", Julia solves the vectorization issue in a different manner. In this case, the period (dot) is prefixed to the operator.
+1. In Julia, array indexing starts at 1, and not at 0 as in Python
+
+2. When slicing a Julia array, the 2nd index parameter of the slice is included in the return value
+
+```
+a = [1, 2, 3, 4]
+
+a[2 : 4] == [2, 3, 4]
+
+# returns true
+```
+
+2. Whereas in Python, there are numnerous numpy functions that vectorize math operations across arrays, but require the import of the library "numpy", Julia solves the vectorization issue in a different manner. In this case, the period (dot) is prefixed to the operator.
 
 For example, this compares whether two arrays are equal:
 
 ```
-a = [1, 2, 3, 4]
 b = [1, 2, 4, 8]
 a == b
 
