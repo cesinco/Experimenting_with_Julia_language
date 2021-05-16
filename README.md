@@ -42,12 +42,12 @@ D:\julia_docker
 where you want to store files shared between the Docker container and the host PC, you would use the following process to create your new Julia container:  
     1. In the Docker Desktop application, click on the left menu item "Images", then click on the "Run" button at the far right of the "julia" image (you need to mouse over to see the button)
     2. In the dialog box that opens, click on Optional Settings, and then add the Host Path (```D:\julia_docker```) and Container Path (```/usr/share/julia_scripts```), then click on the "Run" button. See screenshot:  
-    ![Docker Create Julia Container](Docker_Desktop_julia_161.png)
+    ![Docker Create Julia Container](images/Docker_Desktop_julia_161.png)
     3. Allegedly, you can achieve the same goal as the two steps above by executing the following line in a command prompt window after Docker and the Julia image have been successfully downloaded and installed:  
     ```docker run --name=julia_161 -d -v D:\julia_docker:/usr/share/julia_scripts julia:latest```  
     however in practice, the container created using this command failed to start.
 6. After the container has been started in Docker Desktop, return to your VS Code window and confirm it is visible from the Docker extension (click on the Docker side menu icon). If necessary, you can Start the container from VS Code as well.  
-![Start Julia container](VSCode_start_Julia_container.png)  
+![Start Julia container](images/VSCode_start_Julia_container.png)  
 
 # Editing and running Julia code in VS Code window
 
@@ -57,19 +57,19 @@ Julia code can be executed in the REPL (Read-Eval-Print-Loop) which is an intera
 
 Julia code can be executed directly in the REPL. REPL can be started from VS Code, by launching the VS Code command selection _Ctrl-Shift-P_ and choose ```Julia: Start REPL```
 
-![Julia Start REPL](VSCode_start_REPL.png)
+![Julia Start REPL](images/VSCode_start_REPL.png)
 
 Once started, the REPL "shell" will be visible in the VS Code shell area, where you can enter Julia commands for immediate execution
 
-![REPL commands](VSCode_REPL_commands.png)
+![REPL commands](images/VSCode_REPL_commands.png)
 
 Besides executing code typed in the shell, REPL will also execute code in the code editor window. By placing your cursor on a line in the code and pressing _Shift-Enter_, the selected line will be executed. Furthermore, you can create "code cells" by creating comment lines on either side of a sequence of statements you want to execute in one go, and then press _Shift-Enter_ to execute the lines in the "code cell" containing the location of the selected line in the code editor. Those lines will get executed and the cursor will advance to the next "code cell".
 
-![REPL code cell execution 1](VSCode_Julia_execute_codecell_1.png)
+![REPL code cell execution 1](images/VSCode_Julia_execute_codecell_1.png)
 
 If you press _Shift-Enter_ again, the next "code cell" will execute.
 
-![REPL code cell execution 2](VSCode_Julia_execute_codecell_2.png)
+![REPL code cell execution 2](images/VSCode_Julia_execute_codecell_2.png)
 
 ## Julia interpreter support
 
@@ -77,10 +77,10 @@ If running Julia installed locally, using either the installer or the portable v
 
 1. Open a Command Prompt terminal
 2. At the prompt, type ```julia julia_script.jl``` to launch the Julia interpreter and have it compile and run the script named "julia_script.jl". You may need to provide a full path to either or both the julia executable and the script file.  
-![Julia execution cmd Terminal](VSCode_Julia_execute_terminal_cmd.png)
+![Julia execution cmd Terminal](images/VSCode_Julia_execute_terminal_cmd.png)
 3. If working in a Docker container, you will need to create a new bash terminal
 4. Similarly, enter the command ```julia julia_script.jl``` to have the Julia program execute inside the container.  
-![Julia execution bash terminal](VSCode_Julia_execute_terminal_bash.png)
+![Julia execution bash terminal](images/VSCode_Julia_execute_terminal_bash.png)
 
 # Language differences between Julia and Python (or other languages)
 
