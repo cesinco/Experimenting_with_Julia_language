@@ -7,7 +7,7 @@ https://www.julia-vscode.org/
 
 ## VS Code is now the default code editor for Julia
 
-There are some resources online that still say that using **Atom Code editor** with the **Juno** extension or using **JuliaPro** (that installs Juno as the default) are the appropriate method for doing development in the Julia language. However, the position of the Julia Language group is that further feature updates to Juno will cease (while still releasing maintenance patches) Juno) and that they are going to officially support VS Code as the editor of choice for Julia development going forward.
+There are some resources online that still say that using **Atom Code editor** with the **Juno** extension or using **JuliaPro** (that installs Juno as the default) are the appropriate method for doing development in the Julia language. However, the position of the Julia Language group is that further feature updates to Juno will cease (while still releasing maintenance patches) and that they are going to officially support VS Code as the editor of choice for Julia development going forward.
 
 https://techytok.com/julia-vscode/
 
