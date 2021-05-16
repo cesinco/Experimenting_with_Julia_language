@@ -121,7 +121,7 @@ Julia requires that strings be delimited by double quote, and reserves single qu
 
 2. In Julia, strings are concatenated using the * operator, and not the + operator as in Python
 
-3. Python's f-string does not exist in Julia. However, the f-string may alwyas have been a substitute for some thignt hat does exist in Julia, that being a proper printf (and variant sprintf) function, found in the Printf library. With an optional first argument as a file handle or file name, printf can direct output to a file, while sprintf directs output to a variable.
+3. Python's f-string does not exist in Julia. However, the f-string may always have been a substitute for some thign that does exist in Julia, that being a proper printf (and variant sprintf) function, found in the Printf library. With an optional first argument as a file handle or file name, printf can direct output to a file, while sprintf directs output to a variable.
 
 ## Arrays
 
