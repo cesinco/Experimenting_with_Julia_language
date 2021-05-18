@@ -332,3 +332,23 @@ example6(opt2=2, opt1=5)
 
 # returns 2.5
 ```
+
+## Speed of execution
+
+I had already noted that the execution speed of Julia compared to Python (even when making use of numpy's vectorized opertions) was perceptibly faster, but I did not actually do any timing of my Python code vs the ported Julia code. As of yesterday, this timing now exists and was not a mere "perception".
+
+Although not perfectly compatible, the following table compares running the Python version of the program against the Julia version. Both were executed on the same machine - a laptop with 16 GB RAM, 1 TB SSD, with a Ryzen 7 4700U processor.
+
+Python code was executed using an Anaconda prompt, firing up an Anaconda virtual Environment running Python 3.8.5
+
+Julia code was executed in a Docker container running Julia 1.6.1
+
+| Scenario                        | Python Timing                                                                                               | Julia Timing                                                                                           |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| INITIAL_VACCINATION_RATE = 0.10 | Started at: 2021-05-17 22:44:25.400044<br>Ended at: 2021-05-17 22:53:16.676924<br>Elapsed time: 531 seconds | Started at: 2021-05-18T03:45:47.317<br>Ended at: 2021-05-18T03:46:05.577<br>Elapsed time: 18.0 seconds |
+| INITIAL_VACCINATION_RATE = 0.25 | Started at: 2021-05-17 22:54:48.655273<br>Ended at: 2021-05-17 23:03:06.921602<br>Elapsed time: 498 seconds | Started at: 2021-05-18T03:49:23.098<br>Ended at: 2021-05-18T03:49:41.920<br>Elapsed time: 19.0 seconds |
+| INITIAL_VACCINATION_RATE = 0.50 | Started at: 2021-05-17 23:04:15.130847<br>Ended at: 2021-05-17 23:12:39.579528<br>Elapsed time: 504 seconds | Started at: 2021-05-18T03:50:47.255<br>Ended at: 2021-05-18T03:51:10.091<br>Elapsed time: 23.0 seconds |
+| INITIAL_VACCINATION_RATE = 0.75 | Started at: 2021-05-17 23:13:44.412978<br>Ended at: 2021-05-17 23:20:48.632066<br>Elapsed time: 424 seconds | Started at: 2021-05-18T03:51:45.271<br>Ended at: 2021-05-18T03:52:10.606<br>Elapsed time: 25.0 seconds |
+| INITIAL_VACCINATION_RATE = 0.90 | Started at: 2021-05-17 23:21:58.613873<br>Ended at: 2021-05-17 23:28:15.960076<br>Elapsed time: 377 seconds | Started at: 2021-05-18T03:52:39.688<br>Ended at: 2021-05-18T03:53:05.109<br>Elapsed time: 25.0 seconds |
+
+That's an average of ~ 467 seconds per scenario for Python vs an average of ~ 22 seconds per scenario for Julia, or in other words, less than 5% of the execution Python's time.
